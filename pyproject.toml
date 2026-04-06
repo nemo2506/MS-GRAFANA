@@ -1,0 +1,79 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+# ----------------------------------------------------------------------
+# Métadonnées du projet
+# ----------------------------------------------------------------------
+
+[project]
+name            = "ms-sms"
+version         = "1.0.0"
+description     = "Client Python pour envoyer des SMS via /api/send-message"
+readme          = "README.md"
+license         = { text = "MIT" }
+requires-python = ">=3.9"
+
+authors = [
+    { name = "Votre Nom", email = "votre@email.com" },
+]
+
+keywords = ["sms", "plugin", "api", "client", "messaging"]
+
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Intended Audience :: Developers",
+    "Topic :: Communications :: Telephony",
+]
+
+# ----------------------------------------------------------------------
+# Dépendances
+# ----------------------------------------------------------------------
+
+dependencies = [
+    "requests>=2.28.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "pytest-mock>=3.10",
+    "responses>=0.23",
+]
+
+# ----------------------------------------------------------------------
+# Commande CLI : ms-sms-send
+# ----------------------------------------------------------------------
+
+[project.scripts]
+ms-sms-send = "ms_sms.cli:main"
+
+# ----------------------------------------------------------------------
+# URLs du projet
+# ----------------------------------------------------------------------
+
+[project.urls]
+Homepage      = "https://github.com/votre-user/ms-sms"
+Repository    = "https://github.com/votre-user/ms-sms"
+"Bug Tracker" = "https://github.com/votre-user/ms-sms/issues"
+
+# ----------------------------------------------------------------------
+# Configuration setuptools
+# ----------------------------------------------------------------------
+
+[tool.setuptools.packages.find]
+exclude = ["tests*"]
+
+# ----------------------------------------------------------------------
+# Configuration pytest
+# ----------------------------------------------------------------------
+
+[tool.pytest.ini_options]
+testpaths     = ["tests"]
+log_cli       = true
