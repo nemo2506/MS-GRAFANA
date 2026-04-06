@@ -19,7 +19,7 @@ from ms_sms import MessagePlugin, APIError, SendMessageResult
 API_URL   = "https://monapi.com"
 TOKEN     = "test_bearer_token"
 ENDPOINT  = f"{API_URL}/api/send-message"
-RECIPIENT = "0634058195"
+RECIPIENT = "0612457890"
 TEXT      = "Bonjour depuis les tests !"
 
 
