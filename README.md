@@ -36,24 +36,24 @@ plugin = MessagePlugin(
 )
 
 # SMS simple
-result = plugin.send(recipient="0634058195", text="Bonjour !")
+result = plugin.send(recipient="0612345678", text="Bonjour !")
 print(result)
 # ✅ Succès
-#   Message    : ✅ SMS envoyé avec succès vers +33634058195
-#   Téléphone  : +33634058195
+#   Message    : ✅ SMS envoyé avec succès vers +33612345678
+#   Téléphone  : +33612345678
 #   Type       : SMS
 #   Envoyé le  : 03/04/2025 14:31:10
 
 # SMS + image JPEG
 result = plugin.send(
-    recipient="0634058195",
+    recipient="0612345678",
     text="Voici une photo",
     image_path="photo.jpg",
 )
 
 # Accès aux champs du résultat
 print(result.success)       # True
-print(result.phone_number)  # +33634058195
+print(result.phone_number)  # +33612345678
 print(result.sent_at)       # 03/04/2025 14:31:10
 print(result.raw)           # dict JSON complet de la réponse
 ```
@@ -72,7 +72,7 @@ plugin = MessagePlugin(
 )
 
 try:
-    result = plugin.send(recipient="0634058195", text="Test")
+    result = plugin.send(recipient="0612345678", text="Test")
     print(result)
 
 except APIError as e:
@@ -120,14 +120,14 @@ Après installation, la commande `ms-sms-send` est disponible :
 ms-sms-send \
   --url https://monapi.com \
   --token montoken \
-  --recipient 0634058195 \
+  --recipient 0612345678 \
   --text "Bonjour !"
 
 # SMS avec image JPEG
 ms-sms-send \
   --url https://monapi.com \
   --token montoken \
-  --recipient 0634058195 \
+  --recipient 0612345678 \
   --text "Voici une photo" \
   --image photo.jpg
 
@@ -154,7 +154,7 @@ ms-sms-send --help
 ```json
 {
     "senderId":   "MonApp",
-    "recipient":  "0634058195",
+    "recipient":  "0612345678",
     "text":       "Bonjour !",
     "base64Jpeg": ""
 }
